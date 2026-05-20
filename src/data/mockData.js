@@ -7,7 +7,7 @@ const generateItems = () => { // this function generates 200 tasks with random a
   const categories = ["Bug", "Feature", "Improvement", "Documentation"]
 
   // this is creating the array of 200 tasks that have random values
-  return Array.from({ length: 200 }, (_, i) => ({
+  return Array.from({ length: 300 }, (_, i) => ({
     id: `TASK-${i + 1}`,
     title: `Task ${i + 1}`,
     status: statuses[Math.floor(Math.random() * statuses.length)],

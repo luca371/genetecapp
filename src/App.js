@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="app-container">
       <div className="app-header">
-        <h1>Work Management Dashboard</h1>
+        <h1>Work Management Dashboard - Technical Assessment Luca</h1>
         <button className="btn-new-task" onClick={() => setShowForm(true)}> {/* open form button */}
           New Task
         </button>
