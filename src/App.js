@@ -3,6 +3,7 @@ import { mockData } from "./data/mockData"
 import DataGrid from "./components/DataGrid/DataGrid"
 import Timeline from "./components/Timeline/Timeline"
 import Form from "./components/Form/Form"
+import "./App.css"
 
 function App() {
   
@@ -15,20 +16,22 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Work Management Dashboard</h1>
-      <button onClick={() => setShowForm(true)}> {/* Open form button */}
-        New Task
-      </button>
+    <div className="app-container">
+      <div className="app-header">
+        <h1>Work Management Dashboard</h1>
+        <button className="btn-new-task" onClick={() => setShowForm(true)}> {/* open form button */}
+          New Task
+        </button>
+      </div>
 
       {showForm && (
         <Form
           onSave={handleAddTask}
           onCancel={() => setShowForm(false)}
         /> 
-      )}     {/* To show if the form is open */}
-      <DataGrid data={tasks} />   {/* Show table grid of tasks */}
-      <Timeline data={tasks} />   {/* Show timeline for tasks */}
+      )}     {/* form open y/n? */}
+      <DataGrid data={tasks} />   
+      <Timeline data={tasks} />   
     </div>
   )
 }

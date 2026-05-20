@@ -1,7 +1,7 @@
 const generateItems = () => { // this function generates 200 tasks with random attributes
 
   // these are the possible values for each task such as status priority, assignee, category
-  const statuses = ["Todo", "In Progress", "Done"] 
+  const statuses = ["To do", "In Progress", "Done"] 
   const priorities = ["Low", "Medium", "High"]
   const assignees = ["Luca", "Edin", "John", "Joanne", "Sophie"]
   const categories = ["Bug", "Feature", "Improvement", "Documentation"]
