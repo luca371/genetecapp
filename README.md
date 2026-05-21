@@ -7,6 +7,9 @@
 - CSS — plain CSS per component
 - Create React App — project setup
 
+## Live demo
+[Work Management Dashboard](https://genetecapp.vercel.app)
+
 ## Components
 
 ### DataGrid component
