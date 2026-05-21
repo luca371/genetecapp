@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Work Management Dashboard Technical Assessment Luca
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech stack
 
-## Available Scripts
+- React — component-based UI
+- JavaScript — i chose this for speed of delivery
+- CSS — plain CSS per component
+- Create React App — project setup
 
-In the project directory, you can run:
+## Components
 
-### `npm start`
+### DataGrid component
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Client side pagination ( for 10, 25, 50 rows per page )
+- Sorting on any column by filter
+- Clear filters button
+- Hide show column with dropdown
+- Counter for rows
+- Empty rows
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Timeline
 
-### `npm test`
+- Items ( events ) grouped by week - why? - i chose this over day for better readability with over 300+ records
+- Current week highlighted 
+- Date range for filtering ( From - To )
+- Screen reader announcements via aria-live
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Form
 
-### `npm run build`
+- All fields required with validation messages
+- Focuses first invalud field
+- Success message on save
+- Cancel / Save flow
+- Clicking outside the popup closes modal
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Architecture 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **State management**: React useState only ( i didnt implement Redux or Context because its not needed for this scale of 300 ). The state lives in App.js and is passed as props.
+- **Grouping by weeks**: With 300 tasks, the day grouping will create a lot of small columns so i decided for better visibility to have it per week
+- **Mock data**: 300 generated tasks on app load with random attributes
+- **Component structure**: Each component has its own folder with a css file attached to it
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to run 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+``` bash 
+npm install
+npm start
+```
