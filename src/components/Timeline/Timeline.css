@@ -204,3 +204,32 @@
   color: #999;
   font-size: 14px;
 }
+
+/* mobile */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 12px;
+  }
+
+  .timeline-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .timeline-filter label {
+    width: 100%;
+  }
+
+  .timeline-date-input {
+    width: 100%;
+  }
+
+  .timeline-groups {
+    gap: 10px;
+  }
+
+  .timeline-group {
+    min-width: 160px;
+  }
+}

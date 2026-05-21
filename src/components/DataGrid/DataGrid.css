@@ -209,3 +209,32 @@
   font-size: 13px;
   color: #999;
 }
+
+/* mobile */
+@media (max-width: 768px) {
+  .datagrid-container {
+    padding: 12px;
+  }
+
+  .datagrid-controls {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .datagrid-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .datagrid-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .datagrid-row-counter {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

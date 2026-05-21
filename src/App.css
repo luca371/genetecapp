@@ -42,3 +42,25 @@
 .btn-new-task:hover {
   background: #333;
 }
+
+/* mobile */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 16px 12px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .app-header h1 {
+    font-size: 18px;
+  }
+
+  .btn-new-task {
+    width: 100%;
+    justify-content: center;
+  }
+}
