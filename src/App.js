@@ -9,6 +9,7 @@ function App() {
   
   const [tasks, setTasks] = useState(mockData) // state to hold the tasks
   const [showForm, setShowForm] = useState(false) // state to check if the form is open or not
+  const [showEasterEgg, setShowEasterEgg] = useState(false) //easter egg 
 
   const handleAddTask = (newTask) => {
     setTasks(prev => [...prev, newTask])  // add new task
@@ -32,6 +33,26 @@ function App() {
       )}     {/* form open y/n? */}
       <DataGrid data={tasks} />   
       <Timeline data={tasks} />   
+      {/* easter egg info button */}
+      <button
+        className="info-btn"
+        onClick={() => setShowEasterEgg(true)}
+        aria-label="About the developer"
+      >
+        info
+      </button>
+
+      {/* easter egg modal */}
+      {showEasterEgg && (
+        <>
+          <div className="form-overlay" onClick={() => setShowEasterEgg(false)} />
+          <div className="easter-egg-modal" role="dialog">
+            <p>Hi! I know this is outside of the technical assessment, but I wanted to add this small easter egg to introduce myself.</p>
+            <p>My name is <strong>Luca</strong> and i am a software developer from Romania passionate about technology. Edin told me the team is what matters most, so I figured the best way to start is by saying hello. Hope you're having a great day! </p>
+            <button className="btn-save" onClick={() => setShowEasterEgg(false)}>Close</button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
